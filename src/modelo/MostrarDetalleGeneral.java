@@ -14,6 +14,7 @@ public class MostrarDetalleGeneral implements MostrarIncidentes{
     @Override
     public void mostarInformacion() {
         
+        
     }
     
     

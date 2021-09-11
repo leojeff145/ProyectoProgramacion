@@ -21,6 +21,8 @@ public class Incidente {
     protected String barrio;
     protected String descripcionIncidente;
     protected Date fechaIncidente;
+    
+    //Constructores
 
     public Incidente(String callePri, String calleSec, String barrio, String descripcionIncidente, String fecha) {
         this.callePri = callePri;
@@ -34,10 +36,55 @@ public class Incidente {
             Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    //get y set
 
+    public String getCallePri() {
+        return callePri;
+    }
+
+    public void setCallePri(String callePri) {
+        this.callePri = callePri;
+    }
+
+    public String getCalleSec() {
+        return calleSec;
+    }
+
+    public void setCalleSec(String calleSec) {
+        this.calleSec = calleSec;
+    }
+
+    public String getBarrio() {
+        return barrio;
+    }
+
+    public void setBarrio(String barrio) {
+        this.barrio = barrio;
+    }
+
+    public String getDescripcionIncidente() {
+        return descripcionIncidente;
+    }
+
+    public void setDescripcionIncidente(String descripcionIncidente) {
+        this.descripcionIncidente = descripcionIncidente;
+    }
+
+    public Date getFechaIncidente() {
+        return fechaIncidente;
+    }
+
+    public void setFechaIncidente(Date fechaIncidente) {
+        this.fechaIncidente = fechaIncidente;
+    }
+
+    @Override
+    public String toString() {
+        return "Incidente{" + "Calle Principal: " + callePri + ",Calle Secundaria: " + calleSec + ", Barrio: " + barrio + ", Detalles: " + descripcionIncidente + ", Fecha: " + fechaIncidente.toGMTString() + '}';
+    }
     
-    
-    
+    //funciones   
     
         
 }

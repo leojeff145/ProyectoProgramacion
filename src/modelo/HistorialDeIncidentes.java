@@ -30,10 +30,7 @@ public class HistorialDeIncidentes {
         listIncidentes.remove(i);
     }
     
-    
-    
-
-    
+        
     
     
     
