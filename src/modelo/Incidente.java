@@ -79,8 +79,7 @@ public class Incidente {
 
     public void setFechaIncidente(Date fechaIncidente) {
         this.fechaIncidente = fechaIncidente;
-    }
-    
+    }    
     
    
 
