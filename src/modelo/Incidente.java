@@ -34,8 +34,53 @@ public class Incidente {
             this.fechaIncidente = formato.parse(fecha);            
         } catch (ParseException ex) {
             Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }   
     }
+
+    public Incidente() {
+    }
+
+
+    public String getCallePri() {
+        return callePri;
+    }
+
+    public String getCalleSec() {
+        return calleSec;
+    }
+
+    public String getBarrio() {
+        return barrio;
+    }
+
+    public String getDescripcionIncidente() {
+        return descripcionIncidente;
+    }
+
+    public Date getFechaIncidente() {
+        return fechaIncidente;
+    }
+
+    public void setCallePri(String callePri) {
+        this.callePri = callePri;
+    }
+
+    public void setCalleSec(String calleSec) {
+        this.calleSec = calleSec;
+    }
+
+    public void setBarrio(String barrio) {
+        this.barrio = barrio;
+    }
+
+    public void setDescripcionIncidente(String descripcionIncidente) {
+        this.descripcionIncidente = descripcionIncidente;
+    }
+
+    public void setFechaIncidente(Date fechaIncidente) {
+        this.fechaIncidente = fechaIncidente;
+    }
+    
     
     //get y set
 
