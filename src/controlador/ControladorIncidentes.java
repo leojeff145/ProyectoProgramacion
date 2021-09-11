@@ -22,8 +22,7 @@ import vista.IFrmRegistrarIncidentes;
  */
 public class ControladorIncidentes implements ActionListener {
     IncidenteDAO objetoDAO= new IncidenteDAO();
-    Incidente objetoIncidente =new Incidente();
-    private Date fechaIncidente;
+    Incidente objetoIncidente =new Incidente();    
     IFrmRegistrarIncidentes objetoVista= new IFrmRegistrarIncidentes();
     
     
@@ -52,14 +51,14 @@ public class ControladorIncidentes implements ActionListener {
         objetoIncidente.setCalleSec(objetoVista.txtCalleP.getText());
         objetoIncidente.setBarrio(objetoVista.txtCalleP.getText());
         try {
+            Date fecha = new Date();
             SimpleDateFormat formato= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            fechaIncidente = formato.parse(objetoVista.txtFecha.getText());            
+            fecha= formato.parse(objetoVista.txtFecha.getText()); 
+            objetoIncidente.setFechaIncidente(fecha);
         } catch (ParseException ex) {
             Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
-        }      
-        objetoIncidente.setFechaIncidente(fechaIncidente);
-        objetoIncidente.setCallePri(objetoVista.txtCalleP.getText());
-        
+        }        
+        objetoIncidente.setCallePri(objetoVista.txtCalleP.getText());        
         objetoDAO.insertarIncidente(objetoIncidente);
     }
 }
