@@ -93,16 +93,14 @@ public class Incidente {
 
     public void setFechaIncidente(Date fechaIncidente) {
         this.fechaIncidente = fechaIncidente;
-    }    
+    }      
     
-   
+    //funciones   
 
     @Override
     public String toString() {
-        return "Incidente{" + "Calle Principal: " + callePri + ",Calle Secundaria: " + calleSec + ", Barrio: " + barrio + ", Detalles: " + descripcionIncidente + ", Fecha: " + fechaIncidente.toGMTString() + '}';
+        return "Incidente{" + "incidente=" + incidente + ", callePri=" + callePri + ", calleSec=" + calleSec + ", barrio=" + barrio + ", descripcionIncidente=" + descripcionIncidente + ", fechaIncidente=" + fechaIncidente + '}';
     }
-    
-    //funciones   
     
         
 }

@@ -21,7 +21,13 @@ public class MostrarDetalleGeneral implements MostrarIncidentes{
         Iterator it = HistorialDeIncidentes.getInsatance().getListIncidentes().iterator();
         while(it.hasNext()){
             aux= (Incidente)it.next();
-            System.out.println(aux.toString());
+            System.out.println(aux.incidente);
+            System.out.println(aux.barrio);
+            System.out.println(aux.callePri);
+            System.out.println(aux.calleSec);
+            System.out.println(aux.fechaIncidente.toGMTString());
+            System.out.println(aux.descripcionIncidente);
+            
         }   
         
         
