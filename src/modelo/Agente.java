@@ -16,4 +16,6 @@ public class Agente extends Usuario{
         super(nombre, apellido, numeroCedula, numTelefono, correoElectronico, contraseña, id);
     }
     
+    
+    
 }
