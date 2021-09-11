@@ -17,6 +17,7 @@ public class Usuario {
     protected String correoElectronico;
     protected String contraseña;
     protected long id;
+    protected HistorialDeIncidentes historial;
 
     public Usuario(String nombre, String apellido, long numeroCedula, long numTelefono, String correoElectronico, String contraseña, long id) {
         this.nombre = nombre;

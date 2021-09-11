@@ -34,6 +34,10 @@ public class Incidente {
             Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    
+    
+    
     
         
 }

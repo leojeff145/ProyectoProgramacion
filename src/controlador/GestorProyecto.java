@@ -17,7 +17,7 @@ public class GestorProyecto {
         Conexion conx= new Conexion();
     }
     
-    /////xd
+    
 }
     
 

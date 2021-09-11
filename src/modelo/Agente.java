@@ -9,9 +9,8 @@ package modelo;
  *
  * @author Leonardo Obando
  */
-public class Agente extends Usuario{
+public class Agente extends Usuario{    
     
-    private HistorialDeIncidentes historial;
     
     public Agente(String nombre, String apellido, long numeroCedula, long numTelefono, String correoElectronico, String contraseña, long id) {
         super(nombre, apellido, numeroCedula, numTelefono, correoElectronico, contraseña, id);
