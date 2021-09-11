@@ -16,6 +16,7 @@ import java.util.logging.Logger;
  * @author Leonardo Obando
  */
 public class Incidente {
+    protected String incidente;
     protected String callePri;    
     protected String calleSec;
     protected String barrio;
@@ -24,7 +25,8 @@ public class Incidente {
     
     //Constructores
 
-    public Incidente(String callePri, String calleSec, String barrio, String descripcionIncidente, String fecha) {
+    public Incidente(String incidente, String callePri, String calleSec, String barrio, String descripcionIncidente, String fecha) {
+        this.incidente = incidente;
         this.callePri = callePri;
         this.calleSec = calleSec;
         this.barrio = barrio;
@@ -34,12 +36,24 @@ public class Incidente {
             this.fechaIncidente = formato.parse(fecha);            
         } catch (ParseException ex) {
             Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
-        }   
+        }
     }
+
+    
 
     public Incidente() {
     }
+    
+    //Getters and Stters
 
+    public String getIncidente() {
+        return incidente;
+    }
+
+    public void setIncidente(String incidente) {
+        this.incidente = incidente;
+    }
+    
 
     public String getCallePri() {
         return callePri;

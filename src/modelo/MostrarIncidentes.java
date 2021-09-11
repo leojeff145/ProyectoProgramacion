@@ -12,5 +12,6 @@ package modelo;
 public interface MostrarIncidentes {
     
     public void mostarInformacion();
+    public void mostarInformacion2(String valor);
     
 }

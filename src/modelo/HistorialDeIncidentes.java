@@ -17,6 +17,14 @@ public class HistorialDeIncidentes {
 
     private HistorialDeIncidentes() {
     }
+
+    public ArrayList<Incidente> getListIncidentes() {
+        return listIncidentes;
+    }
+
+    public void setListIncidentes(ArrayList<Incidente> listIncidentes) {
+        this.listIncidentes = listIncidentes;
+    }    
     
     public static HistorialDeIncidentes getInsatance(){
         return historialInciden;
@@ -29,6 +37,8 @@ public class HistorialDeIncidentes {
     public void eliminarIncidente(Incidente i){
         listIncidentes.remove(i);
     }
+    
+    
     
         
     

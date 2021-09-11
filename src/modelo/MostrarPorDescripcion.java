@@ -15,6 +15,11 @@ public class MostrarPorDescripcion implements MostrarIncidentes{
     public void mostarInformacion() {
         
     }
+
+    @Override
+    public void mostarInformacion2(String valor) {
+        
+    }
     
     
 }
