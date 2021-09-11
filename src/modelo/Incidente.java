@@ -82,47 +82,7 @@ public class Incidente {
     }
     
     
-    //get y set
-
-    public String getCallePri() {
-        return callePri;
-    }
-
-    public void setCallePri(String callePri) {
-        this.callePri = callePri;
-    }
-
-    public String getCalleSec() {
-        return calleSec;
-    }
-
-    public void setCalleSec(String calleSec) {
-        this.calleSec = calleSec;
-    }
-
-    public String getBarrio() {
-        return barrio;
-    }
-
-    public void setBarrio(String barrio) {
-        this.barrio = barrio;
-    }
-
-    public String getDescripcionIncidente() {
-        return descripcionIncidente;
-    }
-
-    public void setDescripcionIncidente(String descripcionIncidente) {
-        this.descripcionIncidente = descripcionIncidente;
-    }
-
-    public Date getFechaIncidente() {
-        return fechaIncidente;
-    }
-
-    public void setFechaIncidente(Date fechaIncidente) {
-        this.fechaIncidente = fechaIncidente;
-    }
+   
 
     @Override
     public String toString() {
