@@ -83,6 +83,23 @@ public class Archivo {
                 listCiudadano.add(ciudadano);               
             }
         }catch(IOException o){            
-        }
+        }       
+    }
+    
+    public void guardarArchivoIncidente(Incidente inc){
+        try{
+            FileWriter fw= new FileWriter("Ciudadano.txt",true);
+            BufferedWriter bw= new BufferedWriter(fw);
+            PrintWriter pw= new PrintWriter(bw);
+            pw.println(inc.incidente);
+            pw.println(inc.barrio);
+            pw.println(inc.callePri);
+            pw.println(inc.calleSec);
+            pw.println(inc.fechaIncidente);
+            pw.println();
+            pw.close();            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }       
     }
 }
