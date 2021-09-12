@@ -40,7 +40,7 @@ public class MostrarPorBarrios extends javax.swing.JFrame {
         jLabel1.setText("Selccione la Zona");
 
         cmbBarrios.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cmbBarrios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "San Juan", "El Ejido", "San Bartolo", " " }));
+        cmbBarrios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "La Merced", "San Roque", "La Victoria", "San Diego", "González Suárez", "San Sebastián", "Panecillo", "San Blas", "La Tola", "San Marcos", "La Loma", "La Recoleta", "La Sena" }));
         cmbBarrios.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cmbBarriosItemStateChanged(evt);

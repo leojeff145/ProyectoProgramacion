@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Incidente;
 import modelo.IncidenteDAO;
-import vista.FrmRegistraIncidenteA;
+import vista.FrmRegistraIncidenteC;
 
 
 /**
@@ -24,10 +24,10 @@ import vista.FrmRegistraIncidenteA;
 public class ControladorIncidentes implements ActionListener {
     IncidenteDAO objetoDAO= new IncidenteDAO();
     Incidente objetoIncidente =new Incidente();    
-    FrmRegistraIncidenteA objetoVista= new FrmRegistraIncidenteA();
+    FrmRegistraIncidenteC objetoVista= new FrmRegistraIncidenteC();
     
     
-    public ControladorIncidentes(FrmRegistraIncidenteA v)
+    public ControladorIncidentes(FrmRegistraIncidenteC v)
     {
         this.objetoVista=v;
         this.objetoVista.btnEnviar.addActionListener(this);

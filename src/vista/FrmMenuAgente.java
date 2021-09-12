@@ -28,10 +28,11 @@ public class FrmMenuAgente extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnRegistrarIncidentesA = new javax.swing.JButton();
+        btnEliminarIncidentes = new javax.swing.JButton();
         btnMostrarIncidenteA = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        btnOrdenarIncidentes = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menú");
@@ -39,11 +40,11 @@ public class FrmMenuAgente extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Menú");
 
-        btnRegistrarIncidentesA.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btnRegistrarIncidentesA.setText("Registrar Incidentes");
-        btnRegistrarIncidentesA.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarIncidentes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnEliminarIncidentes.setText("Eliminar Incidentes");
+        btnEliminarIncidentes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarIncidentesAActionPerformed(evt);
+                btnEliminarIncidentesActionPerformed(evt);
             }
         });
 
@@ -71,39 +72,52 @@ public class FrmMenuAgente extends javax.swing.JFrame {
             }
         });
 
+        btnOrdenarIncidentes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnOrdenarIncidentes.setText("Ordenar Incidentes");
+        btnOrdenarIncidentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrdenarIncidentesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(319, 319, 319)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(319, 319, 319)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnRegresar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(btnRegistrarIncidentesA)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
-                        .addComponent(btnMostrarIncidenteA)))
+                        .addComponent(btnRegresar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1)))
                 .addGap(143, 143, 143))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(btnEliminarIncidentes, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnMostrarIncidenteA)
+                .addGap(117, 117, 117))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(265, 265, 265)
+                .addComponent(btnOrdenarIncidentes, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addGap(78, 78, 78)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrarIncidentesA, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMostrarIncidenteA, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnMostrarIncidenteA, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(btnEliminarIncidentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addComponent(btnOrdenarIncidentes, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegresar)
                     .addComponent(jButton1))
@@ -125,15 +139,21 @@ public class FrmMenuAgente extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    private void btnRegistrarIncidentesAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarIncidentesAActionPerformed
-        FrmRegistraIncidenteA regIncidente=new FrmRegistraIncidenteA();
+    private void btnEliminarIncidentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarIncidentesActionPerformed
+        FrmEliminarIncidente regIncidente=new FrmEliminarIncidente();
         regIncidente.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnRegistrarIncidentesAActionPerformed
+    }//GEN-LAST:event_btnEliminarIncidentesActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnOrdenarIncidentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarIncidentesActionPerformed
+        FrmOrdenarIncidentes ordenar= new FrmOrdenarIncidentes();
+        ordenar.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnOrdenarIncidentesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,8 +192,9 @@ public class FrmMenuAgente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminarIncidentes;
     private javax.swing.JButton btnMostrarIncidenteA;
-    private javax.swing.JButton btnRegistrarIncidentesA;
+    private javax.swing.JButton btnOrdenarIncidentes;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

@@ -102,6 +102,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
             inSesionA.setVisible(true);
             this.dispose();
         }
+        else if(x==2)
+        {
+            return;
+        }
         else{
             inSesionC.setVisible(true);
             this.dispose();
@@ -122,6 +126,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         {
             regUsuarioA.setVisible(true);
             this.dispose();
+        }
+        else if(x==2)
+        {
+            return;
         }
         else{
             regUsuarioC.setVisible(true);

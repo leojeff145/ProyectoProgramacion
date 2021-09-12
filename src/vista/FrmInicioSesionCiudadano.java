@@ -36,7 +36,7 @@ public class FrmInicioSesionCiudadano extends javax.swing.JFrame {
         btnIngresarC = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         txtInUsuarioC = new javax.swing.JTextField();
-        txtInContraC = new javax.swing.JTextField();
+        txtInContraC = new javax.swing.JPasswordField();
 
         jLabel2.setText("jLabel2");
 
@@ -70,7 +70,11 @@ public class FrmInicioSesionCiudadano extends javax.swing.JFrame {
 
         txtInUsuarioC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
-        txtInContraC.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtInContraC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInContraCActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -85,8 +89,8 @@ public class FrmInicioSesionCiudadano extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(134, 134, 134)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtInUsuarioC)
-                            .addComponent(txtInContraC, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)))
+                            .addComponent(txtInUsuarioC, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                            .addComponent(txtInContraC)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(106, 106, 106)
                         .addComponent(btnIngresarC)
@@ -106,11 +110,11 @@ public class FrmInicioSesionCiudadano extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtInUsuarioC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(69, 69, 69)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(75, 75, 75)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtInContraC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                    .addComponent(txtInContraC, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnIngresarC)
                     .addComponent(btnRegresar))
@@ -138,6 +142,10 @@ public class FrmInicioSesionCiudadano extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_btnIngresarCActionPerformed
+
+    private void txtInContraCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInContraCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInContraCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,7 +190,7 @@ public class FrmInicioSesionCiudadano extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    public javax.swing.JTextField txtInContraC;
+    public javax.swing.JPasswordField txtInContraC;
     public javax.swing.JTextField txtInUsuarioC;
     // End of variables declaration//GEN-END:variables
 }

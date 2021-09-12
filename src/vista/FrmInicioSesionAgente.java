@@ -34,11 +34,11 @@ public class FrmInicioSesionAgente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtInUsuarioA = new javax.swing.JTextField();
-        txtInContraA = new javax.swing.JTextField();
         btnIngresarA = new javax.swing.JButton();
         btnRegresarDeInicioSesion = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtInIdA = new javax.swing.JTextField();
+        txtInContraA = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio Sesión Agente");
@@ -58,8 +58,6 @@ public class FrmInicioSesionAgente extends javax.swing.JFrame {
                 txtInUsuarioAActionPerformed(evt);
             }
         });
-
-        txtInContraA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         btnIngresarA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnIngresarA.setText("Ingresar");
@@ -109,7 +107,7 @@ public class FrmInicioSesionAgente extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtInIdA, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
                             .addComponent(txtInUsuarioA)
-                            .addComponent(txtInContraA, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))))
+                            .addComponent(txtInContraA))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -125,11 +123,11 @@ public class FrmInicioSesionAgente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtInUsuarioA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3)
-                    .addComponent(txtInContraA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                    .addComponent(txtInContraA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnIngresarA)
                     .addComponent(btnRegresarDeInicioSesion))
@@ -208,7 +206,7 @@ public class FrmInicioSesionAgente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    public javax.swing.JTextField txtInContraA;
+    public javax.swing.JPasswordField txtInContraA;
     public javax.swing.JTextField txtInIdA;
     public javax.swing.JTextField txtInUsuarioA;
     // End of variables declaration//GEN-END:variables
