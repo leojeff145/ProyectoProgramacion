@@ -47,9 +47,10 @@ public class ControladorIncidentes implements ActionListener {
        /* objetoIncidente.setPrecioInicial(Integer.parseInt(objetoVista.txtPrecioInicial.getText()));
         objetoIncidente.setPuja(Integer.parseInt(objetoVista.txtPuja.getText()));
         objetoIncidente.setNombre(objetoVista.txtNombre.getText());*/
+        objetoIncidente.setBarrio(objetoVista.txtCalleP.getText());
         objetoIncidente.setCallePri(objetoVista.txtCalleP.getText());
         objetoIncidente.setCalleSec(objetoVista.txtCalleP.getText());
-        objetoIncidente.setBarrio(objetoVista.txtCalleP.getText());
+        
         try {
             Date fecha = new Date();
             SimpleDateFormat formato= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
