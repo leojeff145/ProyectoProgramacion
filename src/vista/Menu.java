@@ -127,6 +127,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void mnNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnNombreActionPerformed
+        //hoolaa
         IFrmTipodeIncidente inVentana= new IFrmTipodeIncidente();
         escritorio.add(inVentana);
         inVentana.show();
