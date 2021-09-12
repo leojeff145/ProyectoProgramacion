@@ -6,6 +6,8 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 
 /**
  *
@@ -36,9 +38,7 @@ public class HistorialDeIncidentes {
     
     public void eliminarIncidente(Incidente i){
         listIncidentes.remove(i);
-    }
-    
-    
+    } 
     
         
     
