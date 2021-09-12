@@ -25,18 +25,18 @@ public class Incidente {
     
     //Constructores
     
-    public Incidente(String incidente, String callePri, String calleSec, String barrio, String descripcionIncidente, String fechaIncidente) {
-        this.incidente = incidente;
+    public Incidente(String incidente, String callePri, String calleSec, String barrio, String descripcionIncidente) {
+        this.incidente = "Prueba";
         this.callePri = callePri;
         this.calleSec = calleSec;
         this.barrio = barrio;
         this.descripcionIncidente = descripcionIncidente;
-        try {
-            SimpleDateFormat formato= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            this.fechaIncidente = formato.parse("");            
-        } catch (ParseException ex) {
-            Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            SimpleDateFormat formato= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+//            this.fechaIncidente = formato.parse("");            
+//        } catch (ParseException ex) {
+//            Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
     public Incidente() {

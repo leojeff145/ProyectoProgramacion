@@ -14,7 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Incidente;
 import modelo.IncidenteDAO;
-import vista.IFrmRegistrarIncidentes;
+import vista.FrmRegistraIncidenteA;
+
 
 /**
  *
@@ -23,10 +24,10 @@ import vista.IFrmRegistrarIncidentes;
 public class ControladorIncidentes implements ActionListener {
     IncidenteDAO objetoDAO= new IncidenteDAO();
     Incidente objetoIncidente =new Incidente();    
-    IFrmRegistrarIncidentes objetoVista= new IFrmRegistrarIncidentes();
+    FrmRegistraIncidenteA objetoVista= new FrmRegistraIncidenteA();
     
     
-    public ControladorIncidentes(IFrmRegistrarIncidentes v)
+    public ControladorIncidentes(FrmRegistraIncidenteA v)
     {
         this.objetoVista=v;
         this.objetoVista.btnEnviar.addActionListener(this);
@@ -54,7 +55,7 @@ public class ControladorIncidentes implements ActionListener {
         try {
             Date fecha = new Date();
             SimpleDateFormat formato= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            fecha= formato.parse(objetoVista.txtFecha.getText()); 
+            fecha= formato.parse(objetoVista.txtFechaIncidente.getText()); 
             objetoIncidente.setFechaIncidente(fecha);
         } catch (ParseException ex) {
             Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);

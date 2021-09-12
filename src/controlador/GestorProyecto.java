@@ -3,7 +3,7 @@ package controlador;
 
 import modelo.Conexion;
 import modelo.Incidente;
-import vista.IFrmRegistrarIncidentes;
+
 
 
 public class GestorProyecto {
