@@ -18,6 +18,7 @@ public class FrmRegistraUsuarioAgente extends javax.swing.JFrame {
     Agente agente = new Agente();
     Archivo archivoAg= new Archivo();
     
+    
     public FrmRegistraUsuarioAgente() {
         initComponents();
     }
