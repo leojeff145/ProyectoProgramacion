@@ -24,13 +24,13 @@ public class Incidente {
     protected Date fechaIncidente;
     
     //Constructores
-
-    public Incidente() {
-        this.incidente = "";
-        this.callePri = "";
-        this.calleSec = "";
-        this.barrio = "";
-        this.descripcionIncidente = "";
+    
+    public Incidente(String incidente, String callePri, String calleSec, String barrio, String descripcionIncidente, String fechaIncidente) {
+        this.incidente = incidente;
+        this.callePri = callePri;
+        this.calleSec = calleSec;
+        this.barrio = barrio;
+        this.descripcionIncidente = descripcionIncidente;
         try {
             SimpleDateFormat formato= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             this.fechaIncidente = formato.parse("");            
@@ -39,6 +39,9 @@ public class Incidente {
         }
     }
 
+    public Incidente() {
+    }
+    
     
     //Getters and Stters
 

@@ -5,6 +5,7 @@
  */
 package vista;
 
+import modelo.HistorialDeIncidentes;
 import modelo.Incidente;
 
 /**
@@ -229,6 +230,9 @@ public class IFrmRegistrarIncidentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtFechaActionPerformed
 
     private void txtBarrioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBarrioActionPerformed
+
+        //String incidente=(String)cmbTipoReporte.getSelectedItem();
+       
         
     }//GEN-LAST:event_txtBarrioActionPerformed
 
@@ -246,11 +250,9 @@ public class IFrmRegistrarIncidentes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cmbTipoReporteItemStateChanged
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-//        in.setIncidente((String)cmbTipoReporte.getSelectedItem());
-//        in.setCalleSec(txtCalleS.getText());
-//        in.setDescripcionIncidente(txtDescripcion.getText());
-//        in.setBarrio(txtBarrio.getText());
-//        in.setCallePri(txtCalleP.getText()); 
+        Incidente incidente= new Incidente((String)cmbTipoReporte.getSelectedItem(), txtCalleP.getText(),txtCalleS.getText(),txtBarrio.getText(),txtDescripcion.getText(),txtFecha.getText());
+        
+        HistorialDeIncidentes.getInsatance().adicionarIncidente(incidente);
     }//GEN-LAST:event_btnEnviarActionPerformed
 
 
