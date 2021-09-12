@@ -26,15 +26,7 @@ public class Agente extends Usuario{
     
     public void ordenarIncidente(){
         Collections.sort(HistorialDeIncidentes.getInsatance().getListIncidentes(),new CompararIncidentes());
-    }
-    
-    
-     
-
-    
-
-    
-    
+    }   
     
     
 }
