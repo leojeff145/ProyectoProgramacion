@@ -6,6 +6,8 @@
 package vista;
 
 import javax.swing.JOptionPane;
+import modelo.Archivo;
+import modelo.Ciudadano;
 
 /**
  *
@@ -13,9 +15,9 @@ import javax.swing.JOptionPane;
  */
 public class FrmRegistroUsuarioCiudadano extends javax.swing.JFrame {
 
-    /**
-     * Creates new form RegistroUsuarioCiudadano
-     */
+    Ciudadano ciudadano = new Ciudadano();
+    Archivo archivoCi= new Archivo();
+    
     public FrmRegistroUsuarioCiudadano() {
         initComponents();
     }
@@ -181,6 +183,24 @@ public class FrmRegistroUsuarioCiudadano extends javax.swing.JFrame {
             inSesion.setVisible(true);
             this.dispose();
         }
+        
+        //Archivos Planos
+        long cI= Long.parseLong(txtRegCedulaC.getText());
+        String nombre= txtRegNombreC.getText();
+        String apellido= txtRegApellidoC.getText();
+        String correo= txtRegCorreoC.getText();
+        String contra= txtRegContraC.getText();
+        long tel=Long.parseLong(txtRegTelfC.getText());
+        
+        ciudadano.setNumeroCedula(cI);
+        ciudadano.setNombre(nombre);
+        ciudadano.setApellido(apellido);
+        ciudadano.setCorreoElectronico(correo);
+        ciudadano.setContraseña(contra);
+        ciudadano.setNumTelefono(tel);
+        
+        archivoCi.guardarArchivoCiudadano(ciudadano);
+        
     }//GEN-LAST:event_btnRegistrarCActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed

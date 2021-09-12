@@ -95,7 +95,7 @@ public class Archivo {
             pw.println(inc.barrio);
             pw.println(inc.callePri);
             pw.println(inc.calleSec);
-            pw.println(inc.fechaIncidente);
+            pw.println(inc.fechaIncidente.toGMTString());
             pw.println();
             pw.close();            
         }catch(Exception e){
