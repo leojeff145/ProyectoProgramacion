@@ -13,11 +13,43 @@ import java.util.ArrayList;
  * @author Leonardo Obando
  */
 public class Ciudadano extends Usuario{
+    private long numeroCedula;
+    private long numTelefono;
     private ArrayList <Incidente> listIncidente= new ArrayList();
-    
-    public Ciudadano(String nombre, String apellido, long numeroCedula, long numTelefono, String correoElectronico, String contraseña, long id) {
-        super(nombre, apellido, numeroCedula, numTelefono, correoElectronico, contraseña, id);        
+
+    public Ciudadano(long numeroCedula, long numTelefono, String nombre, String apellido, String correoElectronico, String contraseña) {
+        super(nombre, apellido, correoElectronico, contraseña);
+        this.numeroCedula = numeroCedula;
+        this.numTelefono = numTelefono;
+    } 
+
+    public Ciudadano() {
     }
+
+    public long getNumeroCedula() {
+        return numeroCedula;
+    }
+
+    public void setNumeroCedula(long numeroCedula) {
+        this.numeroCedula = numeroCedula;
+    }
+
+    public long getNumTelefono() {
+        return numTelefono;
+    }
+
+    public void setNumTelefono(long numTelefono) {
+        this.numTelefono = numTelefono;
+    }
+
+    public ArrayList<Incidente> getListIncidente() {
+        return listIncidente;
+    }
+
+    public void setListIncidente(ArrayList<Incidente> listIncidente) {
+        this.listIncidente = listIncidente;
+    }
+    
     
     
     public void adicionarIncidente(Incidente i){

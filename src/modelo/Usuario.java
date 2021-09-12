@@ -11,23 +11,18 @@ package modelo;
  */
 public class Usuario {
     protected String nombre;
-    protected String apellido;
-    protected long numeroCedula;
-    protected long numTelefono;
+    protected String apellido;    
     protected String correoElectronico;
-    protected String contraseña;
-    protected long id;
-    protected HistorialDeIncidentes historial;
+    protected String contraseña;      
 
-    public Usuario(String nombre, String apellido, long numeroCedula, long numTelefono, String correoElectronico, String contraseña, long id) {
+    public Usuario(String nombre, String apellido, String correoElectronico, String contraseña) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.numeroCedula = numeroCedula;
-        this.numTelefono = numTelefono;
         this.correoElectronico = correoElectronico;
         this.contraseña = contraseña;
-        this.id = id;
-    }
+    }   
+
+    
 
     public Usuario() {
     }
@@ -38,15 +33,7 @@ public class Usuario {
 
     public String getApellido() {
         return apellido;
-    }
-
-    public long getNumeroCedula() {
-        return numeroCedula;
-    }
-
-    public long getNumTelefono() {
-        return numTelefono;
-    }
+    }    
 
     public String getCorreoElectronico() {
         return correoElectronico;
@@ -54,15 +41,7 @@ public class Usuario {
 
     public String getContraseña() {
         return contraseña;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public HistorialDeIncidentes getHistorial() {
-        return historial;
-    }
+    }   
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -70,15 +49,7 @@ public class Usuario {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    public void setNumeroCedula(long numeroCedula) {
-        this.numeroCedula = numeroCedula;
-    }
-
-    public void setNumTelefono(long numTelefono) {
-        this.numTelefono = numTelefono;
-    }
+    }    
 
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
@@ -86,15 +57,7 @@ public class Usuario {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setHistorial(HistorialDeIncidentes historial) {
-        this.historial = historial;
-    }
+    }    
     
     
     

@@ -13,12 +13,26 @@ import java.util.Collections;
  *
  * @author Leonardo Obando
  */
-public class Agente extends Usuario{    
-    
-    
-    public Agente(String nombre, String apellido, long numeroCedula, long numTelefono, String correoElectronico, String contraseña, long id) {
-        super(nombre, apellido, numeroCedula, numTelefono, correoElectronico, contraseña, id);
+public class Agente extends Usuario{ 
+    private long id;    
+
+    public Agente(long id, String nombre, String apellido, String correoElectronico, String contraseña) {
+        super(nombre, apellido, correoElectronico, contraseña);
+        this.id = id;
     }
+    
+    public Agente() {
+    }    
+    
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }    
+       
     
     public void eliminarIncidente(Incidente i){
         HistorialDeIncidentes.getInsatance().eliminarIncidente(i);
