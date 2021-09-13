@@ -26,7 +26,7 @@ public class Incidente {
     //Constructores
     
     public Incidente(String incidente, String callePri, String calleSec, String barrio, String descripcionIncidente) {
-        this.incidente = "Prueba";
+        this.incidente = incidente;
         this.callePri = callePri;
         this.calleSec = calleSec;
         this.barrio = barrio;

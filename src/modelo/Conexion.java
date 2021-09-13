@@ -18,7 +18,8 @@ public class Conexion {
         {
             MongoClient mongo=new MongoClient("localhost",27017);
             baseDatos= mongo.getDB("ZonasInsegurasQuito");
-            coleccion=baseDatos.getCollection("usuario");
+            coleccion=baseDatos.getCollection("agente");
+            coleccion=baseDatos.getCollection("ciudadano");
             coleccion=baseDatos.getCollection("incidentes");
             System.out.println("conexion a base de datos exitoso...");
         }

@@ -5,6 +5,7 @@
  */
 package vista;
 
+import controlador.ControladorIncidentes;
 import javax.swing.JOptionPane;
 
 /**
@@ -137,8 +138,10 @@ public class FrmInicioSesionCiudadano extends javax.swing.JFrame {
         }
         else
         {
-            FrmRegistraIncidenteC regIncidenteC= new FrmRegistraIncidenteC();
-            regIncidenteC.setVisible(true);
+            FrmRegistraIncidenteC v=new FrmRegistraIncidenteC();
+            ControladorIncidentes c=new ControladorIncidentes(v);
+            v.setVisible(true);
+            v.setLocationRelativeTo(v);
             this.dispose();
         }
     }//GEN-LAST:event_btnIngresarCActionPerformed

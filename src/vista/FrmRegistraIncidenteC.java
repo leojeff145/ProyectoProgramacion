@@ -5,8 +5,14 @@
  */
 package vista;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.MongoClient;
 import controlador.ControladorIncidentes;
 import javax.swing.JOptionPane;
+import modelo.Incidente;
+import modelo.IncidenteDAO;
 
 /**
  *
@@ -14,9 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class FrmRegistraIncidenteC extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmRegistraIncidente
-     */
+    
     public FrmRegistraIncidenteC() {
         initComponents();
     }
@@ -213,7 +217,7 @@ public class FrmRegistraIncidenteC extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         FrmPrincipal panelPrincipal= new FrmPrincipal();
         panelPrincipal.setVisible(true);
-        
+        this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
@@ -224,7 +228,7 @@ public class FrmRegistraIncidenteC extends javax.swing.JFrame {
         else
         {
             //Aqui se guardan los datos ingresados
-            String barrio=(String)cmbBarrios.getSelectedItem();
+            
             txtFechaIncidente.setText("");
             txtCalleP.setText("");
             txtCalleS.setText("");
@@ -250,10 +254,36 @@ public class FrmRegistraIncidenteC extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        FrmRegistraIncidenteC v=new FrmRegistraIncidenteC();
-        ControladorIncidentes c=new ControladorIncidentes(v);
-        v.setVisible(true);
-        v.setLocationRelativeTo(v);
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(MostrarPorIncidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(MostrarPorIncidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(MostrarPorIncidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MostrarPorIncidente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FrmRegistraIncidenteC().setVisible(true);
+            }
+        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

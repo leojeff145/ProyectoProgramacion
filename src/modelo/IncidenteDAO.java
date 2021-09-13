@@ -14,8 +14,10 @@ import com.mongodb.BasicDBObject;
 public class IncidenteDAO {
     public void insertarIncidente(Incidente inc)
     {
+        
         Conexion conx= new Conexion();
         BasicDBObject documento=new BasicDBObject();
+        documento.put("Incidente", inc.getIncidente());
         documento.put("Barrio", inc.getBarrio());
         documento.put("Calle Principal", inc.getCallePri());
         documento.put("Calle Secundaria", inc.getCalleSec());

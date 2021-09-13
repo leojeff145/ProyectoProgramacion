@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controlador;
 
 import java.awt.event.ActionEvent;
@@ -12,22 +8,18 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import modelo.Incidente;
-import modelo.IncidenteDAO;
+import modelo.Agente;
+
 import vista.FrmRegistraIncidenteC;
+import vista.FrmRegistraUsuarioAgente;
 
-
-/**
- *
- * @author WISTAR
- */
-public class ControladorIncidentes implements ActionListener {
+public class ControladorRegistroAgente implements ActionListener{
     IncidenteDAO objetoDAO= new IncidenteDAO();
-    Incidente objetoIncidente =new Incidente();    
-    FrmRegistraIncidenteC objetoVista= new FrmRegistraIncidenteC();
+    Agente objetoIncidente =new Incidente();    
+    FrmRegistraUsuarioAgente objetoVista= new FrmRegistraUsuarioAgente();
     
     
-    public ControladorIncidentes(FrmRegistraIncidenteC v)
+    public ControladorRegistroAgente(FrmRegistraUsuarioAgente v)
     {
         this.objetoVista=v;
         this.objetoVista.btnEnviar.addActionListener(this);
