@@ -9,27 +9,28 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Agente;
+import modelo.AgenteDAO;
 
 import vista.FrmRegistraIncidenteC;
 import vista.FrmRegistraUsuarioAgente;
 
 public class ControladorRegistroAgente implements ActionListener{
-    IncidenteDAO objetoDAO= new IncidenteDAO();
-    Agente objetoIncidente =new Incidente();    
+    AgenteDAO objetoDAO= new AgenteDAO();
+    Agente objetoIncidente =new Agente();    
     FrmRegistraUsuarioAgente objetoVista= new FrmRegistraUsuarioAgente();
     
     
     public ControladorRegistroAgente(FrmRegistraUsuarioAgente v)
     {
         this.objetoVista=v;
-        this.objetoVista.btnEnviar.addActionListener(this);
+        this.objetoVista.btnRegistrarA.addActionListener(this);
     }
     
     
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==objetoVista.btnEnviar)
+        if(e.getSource()==objetoVista.btnRegistrarA)
         {
             agregarIncidente();
         }
@@ -37,11 +38,11 @@ public class ControladorRegistroAgente implements ActionListener{
     
     public void agregarIncidente()
     {
-        String barrio=(String)objetoVista.cmbBarrios.getSelectedItem();
+        /*String barrio=(String)objetoVista.cmbBarrios.getSelectedItem();
         String incidente=(String)objetoVista.cmbTipoIncidente.getSelectedItem();
        /* objetoIncidente.setPrecioInicial(Integer.parseInt(objetoVista.txtPrecioInicial.getText()));
         objetoIncidente.setPuja(Integer.parseInt(objetoVista.txtPuja.getText()));
-        objetoIncidente.setNombre(objetoVista.txtNombre.getText());*/
+        objetoIncidente.setNombre(objetoVista.txtNombre.getText());
        
         objetoIncidente.setIncidente(incidente);
         objetoIncidente.setBarrio(barrio);
@@ -57,6 +58,6 @@ public class ControladorRegistroAgente implements ActionListener{
             Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
         } 
         objetoIncidente.setDescripcionIncidente(objetoVista.txtDescripcion.getText());        
-        objetoDAO.insertarIncidente(objetoIncidente);
+        objetoDAO.insertarIncidente(objetoIncidente);*/
     }
 }
