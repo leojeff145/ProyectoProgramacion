@@ -4,10 +4,10 @@ package modelo;
 import com.mongodb.BasicDBObject;
 
 public class AgenteDAO {
-    public void insertarIncidente(Agente ag)
+    public void insertarAgente(Agente ag)
     {
         
-        Conexion conx= new Conexion();
+        ConexionAgente conx= new ConexionAgente();
         BasicDBObject documento=new BasicDBObject();
         documento.put("Id", ag.getId());
         documento.put("Correo Electronico", ag.getCorreoElectronico());

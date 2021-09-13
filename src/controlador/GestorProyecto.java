@@ -1,7 +1,7 @@
 
 package controlador;
 
-import modelo.Conexion;
+import modelo.ConexionIncidentes;
 import modelo.Incidente;
 
 
@@ -9,7 +9,7 @@ import modelo.Incidente;
 public class GestorProyecto {
     public static void main(String args[])
     {
-        Conexion conx= new Conexion();
+        ConexionIncidentes conx= new ConexionIncidentes();
     }
     
     

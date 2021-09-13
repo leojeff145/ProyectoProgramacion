@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import vista.FrmRegistraUsuarioAgente;
 
 
 public class Archivo {
     
     ArrayList <Agente> listAgente= new ArrayList();
     ArrayList <Ciudadano> listCiudadano= new ArrayList();  
-    
     
     public void guardarArchivoAgente(Agente u){
         try{

@@ -47,9 +47,6 @@ public class ControladorIncidentes implements ActionListener {
     {
         String barrio=(String)objetoVista.cmbBarrios.getSelectedItem();
         String incidente=(String)objetoVista.cmbTipoIncidente.getSelectedItem();
-       /* objetoIncidente.setPrecioInicial(Integer.parseInt(objetoVista.txtPrecioInicial.getText()));
-        objetoIncidente.setPuja(Integer.parseInt(objetoVista.txtPuja.getText()));
-        objetoIncidente.setNombre(objetoVista.txtNombre.getText());*/
        
         objetoIncidente.setIncidente(incidente);
         objetoIncidente.setBarrio(barrio);

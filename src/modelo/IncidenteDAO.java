@@ -15,7 +15,7 @@ public class IncidenteDAO {
     public void insertarIncidente(Incidente inc)
     {
         
-        Conexion conx= new Conexion();
+        ConexionIncidentes conx= new ConexionIncidentes();
         BasicDBObject documento=new BasicDBObject();
         documento.put("Incidente", inc.getIncidente());
         documento.put("Barrio", inc.getBarrio());

@@ -38,14 +38,14 @@ public class FrmRegistraUsuarioAgente extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtRegCorreoA = new javax.swing.JTextField();
-        txtRegContraA = new javax.swing.JTextField();
         txtregNombreA = new javax.swing.JTextField();
         txtregApellidoA = new javax.swing.JTextField();
         btnRegistrarA = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         txtRegIdA = new javax.swing.JTextField();
+        txtRegContraA = new javax.swing.JPasswordField();
+        txtRegCorreoA = new javax.swing.JTextField();
 
         jLabel3.setText("jLabel3");
 
@@ -66,10 +66,6 @@ public class FrmRegistraUsuarioAgente extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Apellido");
-
-        txtRegCorreoA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        txtRegContraA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         txtregNombreA.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
@@ -101,10 +97,6 @@ public class FrmRegistraUsuarioAgente extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(177, 177, 177)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -117,18 +109,22 @@ public class FrmRegistraUsuarioAgente extends javax.swing.JFrame {
                 .addGap(98, 98, 98)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtRegIdA, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRegCorreoA, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRegContraA, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtregNombreA, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtregApellidoA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRegistrarA)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                         .addComponent(btnRegresar)
-                        .addGap(63, 63, 63))))
+                        .addGap(63, 63, 63))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtRegIdA, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtregNombreA, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtregApellidoA, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                            .addComponent(txtRegContraA)
+                            .addComponent(txtRegCorreoA))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(175, 175, 175))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,11 +139,13 @@ public class FrmRegistraUsuarioAgente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtRegCorreoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
-                    .addComponent(txtRegContraA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtRegContraA, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)))
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtregNombreA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
@@ -155,7 +153,7 @@ public class FrmRegistraUsuarioAgente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtregApellidoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnRegistrarA)
                     .addComponent(btnRegresar))
@@ -250,7 +248,7 @@ public class FrmRegistraUsuarioAgente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    public javax.swing.JTextField txtRegContraA;
+    public javax.swing.JPasswordField txtRegContraA;
     public javax.swing.JTextField txtRegCorreoA;
     public javax.swing.JTextField txtRegIdA;
     public javax.swing.JTextField txtregApellidoA;

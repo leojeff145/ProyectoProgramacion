@@ -6,6 +6,8 @@
 package vista;
 
 import controlador.ControladorIncidentes;
+import controlador.ControladorRegistroAgente;
+import controlador.ControladorRegistroCiudadano;
 import javax.swing.JOptionPane;
 
 /**
@@ -97,6 +99,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
         FrmInicioSesionAgente inSesionA= new FrmInicioSesionAgente();
         FrmInicioSesionCiudadano inSesionC= new FrmInicioSesionCiudadano();
+        
+            
         int x=JOptionPane.showConfirmDialog(this,"Desea Ingresar como Agente?");
         if(x==0)
         {
@@ -110,6 +114,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         else{
             inSesionC.setVisible(true);
             this.dispose();
+            
         }
         
     }//GEN-LAST:event_btnIniciarActionPerformed
@@ -123,17 +128,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
         FrmRegistroUsuarioCiudadano regUsuarioC= new FrmRegistroUsuarioCiudadano();
         
         int x=JOptionPane.showConfirmDialog(this,"Desea Registrarse como Agente?");
-        if(x==0)
+        if(x==0)//Agente
         {
+            ControladorRegistroAgente c=new ControladorRegistroAgente(regUsuarioA);
             regUsuarioA.setVisible(true);
+            regUsuarioA.setLocationRelativeTo(regUsuarioA);
             this.dispose();
         }
         else if(x==2)
         {
             return;
         }
-        else{
+        else{//Ciudadano
+            ControladorRegistroCiudadano c=new ControladorRegistroCiudadano(regUsuarioC);
             regUsuarioC.setVisible(true);
+            regUsuarioC.setLocationRelativeTo(regUsuarioC);
             this.dispose();
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed

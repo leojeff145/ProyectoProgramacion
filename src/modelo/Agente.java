@@ -24,6 +24,15 @@ public class Agente extends Usuario{
     public Agente() {
     }    
 
+    public long getId() {
+        return id;
+    }
+    
+    public void setId(long id) {
+        this.id = id;
+    }
+    
+    
     public String getNombre() {
         return nombre;
     }
@@ -55,16 +64,7 @@ public class Agente extends Usuario{
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    
-    
-    
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }    
+        
        
     
     public void eliminarIncidente(Incidente i){
