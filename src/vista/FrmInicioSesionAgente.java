@@ -5,7 +5,11 @@
  */
 package vista;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import modelo.Agente;
+import modelo.Archivo;
+import modelo.Ciudadano;
 import modelo.Usuario;
 
 /**
@@ -138,25 +142,31 @@ public class FrmInicioSesionAgente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIngresarAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarAActionPerformed
-        
-        if(txtInUsuarioA.getText().isEmpty() || txtInContraA.getText().isEmpty())
-        {
-            JOptionPane.showMessageDialog(null,"Debe llenar los campos!!");
-        }
-        else
-        {
-            FrmMenuAgente menuAgente= new FrmMenuAgente();
-            menuAgente.setVisible(true);
-            this.dispose();
+
+        if (txtInUsuarioA.getText().isEmpty() || txtInContraA.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe llenar los campos!!");
+        } else {
+            Archivo archivo = new Archivo();
+            archivo.leerArchivoAgente();
+            ArrayList<Agente> listaAgentesSesion = archivo.getListAgente();
+            for (int i = 0; i < listaAgentesSesion.size(); i++) {
+                System.out.println(listaAgentesSesion.get(i).getNombre());
+                if (listaAgentesSesion.get(i).getId() == Long.parseLong(txtInIdA.getText() )&& listaAgentesSesion.get(i).getNombre().equals(txtInUsuarioA.getText()) && listaAgentesSesion.get(i).getContraseña().equals(txtInContraA.getText())) {
+                    FrmMenuAgente menuAgente = new FrmMenuAgente();
+                    menuAgente.setVisible(true);
+                    this.dispose();
+                }
+            }
+
         }
     }//GEN-LAST:event_btnIngresarAActionPerformed
 
     private void txtInUsuarioAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInUsuarioAActionPerformed
-          
+
     }//GEN-LAST:event_txtInUsuarioAActionPerformed
 
     private void btnRegresarDeInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarDeInicioSesionActionPerformed
-        FrmPrincipal panelPrincipal= new FrmPrincipal();
+        FrmPrincipal panelPrincipal = new FrmPrincipal();
         panelPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarDeInicioSesionActionPerformed

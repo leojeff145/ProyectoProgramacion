@@ -59,8 +59,13 @@ public class FrmRegistraIncidenteC extends javax.swing.JFrame {
         jLabel1.setToolTipText("");
 
         cmbTipoIncidente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cmbTipoIncidente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Robo", "Incendio", "Violencia Familiar", "Pelea Callejera", "Otros", " " }));
+        cmbTipoIncidente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Robo", "Incendio", "Violencia Familiar", "Asalto", "Pelea Callejera", "Otros", " " }));
         cmbTipoIncidente.setToolTipText("");
+        cmbTipoIncidente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbTipoIncidenteActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Registrar Incidentes");
@@ -249,6 +254,11 @@ public class FrmRegistraIncidenteC extends javax.swing.JFrame {
 
             // }
     }//GEN-LAST:event_cmbBarriosActionPerformed
+
+    private void cmbTipoIncidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoIncidenteActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cmbTipoIncidenteActionPerformed
 
     /**
      * @param args the command line arguments

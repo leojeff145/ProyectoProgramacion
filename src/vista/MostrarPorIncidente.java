@@ -5,17 +5,38 @@
  */
 package vista;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import modelo.HistorialDeIncidentes;
+import modelo.Incidente;
+
 /**
  *
  * @author WISTAR
  */
 public class MostrarPorIncidente extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MostrarPorIncidente
-     */
+    DefaultTableModel modelo;
     public MostrarPorIncidente() {
-        initComponents();
+        initComponents();        
+//        modelo = new DefaultTableModel();
+//        modelo.addColumn("Incidente");
+//        modelo.addColumn("Barrio");
+//        modelo.addColumn("Calle principal");
+//        modelo.addColumn("Calle Secundaria");
+//        modelo.addColumn("Fecha");
+//        this.jTablaPorIncidente.setModel(modelo);
+//        ArrayList<Incidente> listaIncidentes = HistorialDeIncidentes.getInsatance().getListIncidentes();
+//        for (int i = 0; i < listaIncidentes.size(); i++) {
+//            String[] info = new String[6];
+//            info[0] = listaIncidentes.get(i).getIncidente();
+//            info[1] = listaIncidentes.get(i).getBarrio();
+//            info[2] = listaIncidentes.get(i).getCallePri();
+//            info[3] = listaIncidentes.get(i).getCalleSec();
+//            info[4] = listaIncidentes.get(i).getFechaIncidente();
+//            info[5] = listaIncidentes.get(i).getDescripcionIncidente();
+//            modelo.addRow(info);
+//        }
     }
 
     /**
@@ -27,16 +48,16 @@ public class MostrarPorIncidente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTablaPorIncidente = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        cmbTipoIncidente = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Incidentes Por Tipos");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTablaPorIncidente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -44,7 +65,7 @@ public class MostrarPorIncidente extends javax.swing.JFrame {
                 "Tipo", "Barrio", "Calle Principal", "Calle Secundaria", "Fecha", "Descripcion"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTablaPorIncidente);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Ingrese el tipo de Incidente:");
@@ -57,6 +78,15 @@ public class MostrarPorIncidente extends javax.swing.JFrame {
             }
         });
 
+        cmbTipoIncidente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cmbTipoIncidente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Robo", "Asalto", "Incendio", "Violencia Familiar", "Pelea Callejera", "Otros", " " }));
+        cmbTipoIncidente.setToolTipText("");
+        cmbTipoIncidente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbTipoIncidenteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,8 +96,8 @@ public class MostrarPorIncidente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jLabel1)
-                        .addGap(61, 61, 61)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addComponent(cmbTipoIncidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1079, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -82,12 +112,12 @@ public class MostrarPorIncidente extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmbTipoIncidente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,6 +128,34 @@ public class MostrarPorIncidente extends javax.swing.JFrame {
         mostrar.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cmbTipoIncidenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoIncidenteActionPerformed
+        // TODO add your handling code here:
+         modelo = new DefaultTableModel();
+        modelo.addColumn("Incidente");
+        modelo.addColumn("Barrio");
+        modelo.addColumn("Calle principal");
+        modelo.addColumn("Calle Secundaria");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Descripcion");
+        this.jTablaPorIncidente.setModel(modelo);
+        ArrayList<Incidente> listaIncidentes = HistorialDeIncidentes.getInsatance().getListIncidentes();
+        String incidente=(String) cmbTipoIncidente.getSelectedItem();
+        for (int i = 0; i < listaIncidentes.size(); i++) {            
+            System.out.println(incidente);
+            if(listaIncidentes.get(i).getIncidente().equalsIgnoreCase(incidente)){            
+            String[] info = new String[6];
+            info[0] = listaIncidentes.get(i).getIncidente();
+            info[1] = listaIncidentes.get(i).getBarrio();
+            info[2] = listaIncidentes.get(i).getCallePri();
+            info[3] = listaIncidentes.get(i).getCalleSec();
+            info[4] = listaIncidentes.get(i).getFechaIncidente();
+            info[5] = listaIncidentes.get(i).getDescripcionIncidente();
+            modelo.addRow(info);
+           }            
+        }
+        
+    }//GEN-LAST:event_cmbTipoIncidenteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,10 +193,10 @@ public class MostrarPorIncidente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JComboBox<String> cmbTipoIncidente;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTable1;
-    public javax.swing.JTextField jTextField1;
+    public javax.swing.JTable jTablaPorIncidente;
     // End of variables declaration//GEN-END:variables
 }

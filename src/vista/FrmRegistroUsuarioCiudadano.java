@@ -200,24 +200,23 @@ public class FrmRegistroUsuarioCiudadano extends javax.swing.JFrame {
             FrmInicioSesionCiudadano inSesion= new FrmInicioSesionCiudadano();
             inSesion.setVisible(true);
             this.dispose();
+            //Archivos Planos de Ciudadano
+            long cI= Long.parseLong(txtRegCedulaC.getText());
+            String nombre= txtRegNombreC.getText();
+            String apellido= txtRegApellidoC.getText();
+            String correo= txtRegCorreoC.getText();
+            String contra= txtRegContraC.getText();
+            long tel=Long.parseLong(txtRegTelfC.getText());        
+            ciudadano.setNumeroCedula(cI);
+            ciudadano.setNombre(nombre);
+            ciudadano.setApellido(apellido);
+            ciudadano.setCorreoElectronico(correo);
+            ciudadano.setContraseña(contra);
+            ciudadano.setNumTelefono(tel);        
+            archivoCi.guardarArchivoCiudadano(ciudadano);
         }
         
-        //Archivos Planos de Ciudadano
-        long cI= Long.parseLong(txtRegCedulaC.getText());
-        String nombre= txtRegNombreC.getText();
-        String apellido= txtRegApellidoC.getText();
-        String correo= txtRegCorreoC.getText();
-        String contra= txtRegContraC.getText();
-        long tel=Long.parseLong(txtRegTelfC.getText());
         
-        ciudadano.setNumeroCedula(cI);
-        ciudadano.setNombre(nombre);
-        ciudadano.setApellido(apellido);
-        ciudadano.setCorreoElectronico(correo);
-        ciudadano.setContraseña(contra);
-        ciudadano.setNumTelefono(tel);
-        
-        archivoCi.guardarArchivoCiudadano(ciudadano);
         
     }//GEN-LAST:event_btnRegistrarCActionPerformed
 

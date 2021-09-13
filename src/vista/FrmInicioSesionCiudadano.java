@@ -7,7 +7,10 @@ package vista;
 
 import controlador.ControladorArchivoIncidente;
 import controlador.ControladorIncidentes;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import modelo.Archivo;
+import modelo.Ciudadano;
 
 /**
  *
@@ -127,25 +130,31 @@ public class FrmInicioSesionCiudadano extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        FrmPrincipal panelPrincipal= new FrmPrincipal();
+        FrmPrincipal panelPrincipal = new FrmPrincipal();
         panelPrincipal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnIngresarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarCActionPerformed
-        if(txtInUsuarioC.getText().isEmpty() || txtInContraC.getText().isEmpty())
-        {
-            JOptionPane.showMessageDialog(null,"Debe llenar los campos!!");
-        }
-        else
-        {
-            FrmRegistraIncidenteC v=new FrmRegistraIncidenteC();
+        if (txtInUsuarioC.getText().isEmpty() || txtInContraC.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Debe llenar los campos!!");
+        } else {
+            Archivo archivo = new Archivo();
+            archivo.leerArchivoCiudadano();
+            ArrayList<Ciudadano> listaUsuariosSesion = archivo.getListCiudadano();
+            FrmRegistraIncidenteC v = new FrmRegistraIncidenteC();
             //FrmRegistraIncidenteC iNaR=new FrmRegistraIncidenteC();
-            ControladorIncidentes c=new ControladorIncidentes(v);
-            ControladorArchivoIncidente ctrAr =new ControladorArchivoIncidente(v);
-            v.setVisible(true);
-            v.setLocationRelativeTo(v);
-            this.dispose();
+            ControladorIncidentes c = new ControladorIncidentes(v);
+            ControladorArchivoIncidente ctrAr = new ControladorArchivoIncidente(v);
+            System.out.println("Aquí bien");
+            for (int i = 0; i < listaUsuariosSesion.size(); i++) {
+                System.out.println(listaUsuariosSesion.get(i).getNombre());
+                if (listaUsuariosSesion.get(i).getNombre().equals(txtInUsuarioC.getText()) && listaUsuariosSesion.get(i).getContraseña().equals(txtInContraC.getText())) {
+                    v.setVisible(true);
+                    v.setLocationRelativeTo(v);
+                    this.dispose();
+                }
+            }
         }
     }//GEN-LAST:event_btnIngresarCActionPerformed
 

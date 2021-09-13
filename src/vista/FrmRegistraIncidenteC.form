@@ -143,17 +143,21 @@
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="6">
+          <StringArray count="7">
             <StringItem index="0" value="Robo"/>
             <StringItem index="1" value="Incendio"/>
             <StringItem index="2" value="Violencia Familiar"/>
-            <StringItem index="3" value="Pelea Callejera"/>
-            <StringItem index="4" value="Otros"/>
-            <StringItem index="5" value=" "/>
+            <StringItem index="3" value="Asalto"/>
+            <StringItem index="4" value="Pelea Callejera"/>
+            <StringItem index="5" value="Otros"/>
+            <StringItem index="6" value=" "/>
           </StringArray>
         </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbTipoIncidenteActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

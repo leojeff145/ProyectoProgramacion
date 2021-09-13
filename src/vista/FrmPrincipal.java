@@ -9,8 +9,10 @@ import controlador.ControladorArchivoAgente;
 import controlador.ControladorArchivoCiudadano;
 import controlador.ControladorRegistroAgente;
 import controlador.ControladorRegistroCiudadano;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.Archivo;
+import modelo.Ciudadano;
 
 /**
  *
@@ -18,12 +20,10 @@ import modelo.Archivo;
  */
 public class FrmPrincipal extends javax.swing.JFrame {
 
-    
     public FrmPrincipal() {
         initComponents();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -104,26 +104,21 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
-        FrmInicioSesionAgente inSesionA= new FrmInicioSesionAgente();
-        FrmInicioSesionCiudadano inSesionC= new FrmInicioSesionCiudadano();
-        
-            
-        int x=JOptionPane.showConfirmDialog(this,"Desea Ingresar como Agente?");
-        if(x==0)
-        {
+        FrmInicioSesionAgente inSesionA = new FrmInicioSesionAgente();
+        FrmInicioSesionCiudadano inSesionC = new FrmInicioSesionCiudadano();
+
+        int x = JOptionPane.showConfirmDialog(this, "Desea Ingresar como Agente?");
+        if (x == 0) {
             inSesionA.setVisible(true);
             this.dispose();
-        }
-        else if(x==2)
-        {
+        } else if (x == 2) {
             return;
-        }
-        else{
+        } else {
             inSesionC.setVisible(true);
             this.dispose();
-            
+
         }
-        
+
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -131,28 +126,26 @@ public class FrmPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        FrmRegistraUsuarioAgente regUsuarioA= new FrmRegistraUsuarioAgente();
-        FrmRegistraUsuarioAgente regUsArA= new FrmRegistraUsuarioAgente();
-        FrmRegistroUsuarioCiudadano regUsuarioC= new FrmRegistroUsuarioCiudadano();
-        FrmRegistroUsuarioCiudadano regUsArC= new FrmRegistroUsuarioCiudadano();
-        
-        int x=JOptionPane.showConfirmDialog(this,"Desea Registrarse como Agente?");
-        if(x==0)//Agente
+        FrmRegistraUsuarioAgente regUsuarioA = new FrmRegistraUsuarioAgente();
+        FrmRegistraUsuarioAgente regUsArA = new FrmRegistraUsuarioAgente();
+        FrmRegistroUsuarioCiudadano regUsuarioC = new FrmRegistroUsuarioCiudadano();
+        FrmRegistroUsuarioCiudadano regUsArC = new FrmRegistroUsuarioCiudadano();
+
+        int x = JOptionPane.showConfirmDialog(this, "Desea Registrarse como Agente?");
+        if (x == 0)//Agente
         {
-            ControladorRegistroAgente c=new ControladorRegistroAgente(regUsuarioA);
-            ControladorArchivoAgente a = new ControladorArchivoAgente(regUsArA);            
+            ControladorRegistroAgente c = new ControladorRegistroAgente(regUsuarioA);
+            ControladorArchivoAgente a = new ControladorArchivoAgente(regUsArA);
+           
             regUsuarioA.setVisible(true);
             regUsuarioA.setLocationRelativeTo(regUsuarioA);
-            this.dispose();           
-            
-        }
-        else if(x==2)
-        {
+            this.dispose();
+
+        } else if (x == 2) {
             return;
-        }
-        else{//Ciudadano
-            ControladorRegistroCiudadano c=new ControladorRegistroCiudadano(regUsuarioC);
-            ControladorArchivoCiudadano d= new ControladorArchivoCiudadano(regUsArC);
+        } else {//Ciudadano
+            ControladorRegistroCiudadano c = new ControladorRegistroCiudadano(regUsuarioC);
+            ControladorArchivoCiudadano d = new ControladorArchivoCiudadano(regUsArC);
             regUsuarioC.setVisible(true);
             regUsuarioC.setLocationRelativeTo(regUsuarioC);
             this.dispose();
@@ -195,10 +188,9 @@ public class FrmPrincipal extends javax.swing.JFrame {
             public void run() {
                 new FrmPrincipal().setVisible(true);
                 Archivo archivo = new Archivo();
-                archivo.leerArchivoAgente();                
+                archivo.leerArchivoAgente();
                 archivo.leerArchivoCiudadano();
                 archivo.leerArchivoIncidentes();
-               
             }
         });
     }

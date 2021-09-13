@@ -30,14 +30,10 @@ public class Agente extends Usuario{
     
     public void setId(long id) {
         this.id = id;
-    }    
-    
-        
+    }      
        
     
-    public void eliminarIncidente(Incidente i){
-        HistorialDeIncidentes.getInsatance().eliminarIncidente(i);
-    }
+    
     
     public void ordenarIncidente(){
         Collections.sort(HistorialDeIncidentes.getInsatance().getListIncidentes(),new CompararIncidentes());

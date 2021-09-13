@@ -5,17 +5,40 @@
  */
 package vista;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import modelo.HistorialDeIncidentes;
+import modelo.Incidente;
+
 /**
  *
  * @author WISTAR
  */
 public class MostrarPorBarrios extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MostrarPorBarrios
-     */
+    DefaultTableModel modelo;
     public MostrarPorBarrios() {
-        initComponents();
+        initComponents();        
+//        modelo = new DefaultTableModel();
+//        modelo.addColumn("Incidente");
+//        modelo.addColumn("Barrio");
+//        modelo.addColumn("Calle principal");
+//        modelo.addColumn("Calle Secundaria");
+//        modelo.addColumn("Fecha");
+//        this.jTableIncidentesPorBarrios.setModel(modelo);
+//        ArrayList<Incidente> listaIncidentes = HistorialDeIncidentes.getInsatance().getListIncidentes();
+//        for (int i = 0; i < listaIncidentes.size(); i++) {
+//            String[] info = new String[6];
+//            info[0] = listaIncidentes.get(i).getIncidente();
+//            info[1] = listaIncidentes.get(i).getBarrio();
+//            info[2] = listaIncidentes.get(i).getCallePri();
+//            info[3] = listaIncidentes.get(i).getCalleSec();
+//            info[4] = listaIncidentes.get(i).getFechaIncidente();
+//            info[5] = listaIncidentes.get(i).getDescripcionIncidente();
+//            modelo.addRow(info);
+//        }
+        
     }
 
     /**
@@ -111,12 +134,32 @@ public class MostrarPorBarrios extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbBarriosItemStateChanged
 
     private void cmbBarriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBarriosActionPerformed
-        //String barrio=(String)cmbBarrios.getSelectedItem();
-        //if(barrio.equals("San Juan") /*&& barrio.equals(in.getIncidente())*/)
-        // {
-            //txtMostrarPorBarrio.setText(in.getIncidente());
-
-            // }
+//        DefaultTableModel modelo;        
+        modelo = new DefaultTableModel();
+        modelo.addColumn("Incidente");
+        modelo.addColumn("Barrio");
+        modelo.addColumn("Calle principal");
+        modelo.addColumn("Calle Secundaria");
+        modelo.addColumn("Fecha");
+        modelo.addColumn("Descripcion");
+        this.jTableIncidentesPorBarrios.setModel(modelo);
+        ArrayList<Incidente> listaIncidentes = HistorialDeIncidentes.getInsatance().getListIncidentes();
+        String barrio=(String) cmbBarrios.getSelectedItem();
+        for (int i = 0; i < listaIncidentes.size(); i++) {            
+            System.out.println(barrio);
+            if(listaIncidentes.get(i).getBarrio().equalsIgnoreCase(barrio)){            
+            String[] info = new String[6];
+            info[0] = listaIncidentes.get(i).getIncidente();
+            info[1] = listaIncidentes.get(i).getBarrio();
+            info[2] = listaIncidentes.get(i).getCallePri();
+            info[3] = listaIncidentes.get(i).getCalleSec();
+            info[4] = listaIncidentes.get(i).getFechaIncidente();
+            info[5] = listaIncidentes.get(i).getDescripcionIncidente();
+            modelo.addRow(info);
+           }            
+        }
+        
+        
     }//GEN-LAST:event_cmbBarriosActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed

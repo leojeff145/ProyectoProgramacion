@@ -36,7 +36,7 @@ public class HistorialDeIncidentes {
         listIncidentes.add(i);
     }
     
-    public void eliminarIncidente(Incidente i){
+    public void eliminarIncidente(int i){
         listIncidentes.remove(i);
     } 
     

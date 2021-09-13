@@ -37,7 +37,7 @@ public class ControladorRegistroCiudadano implements ActionListener {
         objetoAgente.setNumeroCedula(Long.parseLong(objetoVista.txtRegCedulaC.getText()));
         objetoAgente.setNombre(objetoVista.txtRegNombreC.getText());
         objetoAgente.setApellido(objetoVista.txtRegApellidoC.getText());
-        objetoAgente.setNumTelefono(Long.parseLong(objetoVista.txtRegCedulaC.getText()));
+        objetoAgente.setNumTelefono(Long.parseLong(objetoVista.txtRegTelfC.getText()));
         objetoAgente.setCorreoElectronico(objetoVista.txtRegCorreoC.getText());
         objetoAgente.setContraseña(objetoVista.txtRegContraC.getText());
                 
