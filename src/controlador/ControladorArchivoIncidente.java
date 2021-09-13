@@ -58,6 +58,7 @@ public class ControladorArchivoIncidente implements ActionListener {
         } 
         objetoIncidente.setDescripcionIncidente(objetoVista.txtDescripcion.getText());        
         objArchivoI.guardarArchivoIncidente(objetoIncidente);
+        System.out.println(objetoIncidente.toString());
     }
     
 }

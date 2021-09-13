@@ -140,9 +140,9 @@ public class FrmInicioSesionCiudadano extends javax.swing.JFrame {
         else
         {
             FrmRegistraIncidenteC v=new FrmRegistraIncidenteC();
-            FrmRegistraIncidenteC iNaR=new FrmRegistraIncidenteC();
+            //FrmRegistraIncidenteC iNaR=new FrmRegistraIncidenteC();
             ControladorIncidentes c=new ControladorIncidentes(v);
-            ControladorArchivoIncidente ctrAr =new ControladorArchivoIncidente(iNaR);
+            ControladorArchivoIncidente ctrAr =new ControladorArchivoIncidente(v);
             v.setVisible(true);
             v.setLocationRelativeTo(v);
             this.dispose();
