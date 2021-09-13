@@ -5,7 +5,8 @@
  */
 package vista;
 
-import controlador.ControladorIncidentes;
+import controlador.ControladorArchivoAgente;
+import controlador.ControladorArchivoCiudadano;
 import controlador.ControladorRegistroAgente;
 import controlador.ControladorRegistroCiudadano;
 import javax.swing.JOptionPane;
@@ -125,15 +126,19 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         FrmRegistraUsuarioAgente regUsuarioA= new FrmRegistraUsuarioAgente();
+        FrmRegistraUsuarioAgente regUsArA= new FrmRegistraUsuarioAgente();
         FrmRegistroUsuarioCiudadano regUsuarioC= new FrmRegistroUsuarioCiudadano();
+        FrmRegistroUsuarioCiudadano regUsArC= new FrmRegistroUsuarioCiudadano();
         
         int x=JOptionPane.showConfirmDialog(this,"Desea Registrarse como Agente?");
         if(x==0)//Agente
         {
             ControladorRegistroAgente c=new ControladorRegistroAgente(regUsuarioA);
+            ControladorArchivoAgente a = new ControladorArchivoAgente(regUsArA);            
             regUsuarioA.setVisible(true);
             regUsuarioA.setLocationRelativeTo(regUsuarioA);
-            this.dispose();
+            this.dispose();           
+            
         }
         else if(x==2)
         {
@@ -141,6 +146,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         }
         else{//Ciudadano
             ControladorRegistroCiudadano c=new ControladorRegistroCiudadano(regUsuarioC);
+            ControladorArchivoCiudadano d= new ControladorArchivoCiudadano(regUsArC);
             regUsuarioC.setVisible(true);
             regUsuarioC.setLocationRelativeTo(regUsuarioC);
             this.dispose();

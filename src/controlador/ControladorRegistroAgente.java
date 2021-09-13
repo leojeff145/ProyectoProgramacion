@@ -9,12 +9,13 @@ import java.util.logging.Logger;
 import modelo.Agente;
 import modelo.AgenteDAO;
 
+
 import vista.FrmRegistraIncidenteC;
 import vista.FrmRegistraUsuarioAgente;
 
 public class ControladorRegistroAgente implements ActionListener{
     AgenteDAO objetoDAO= new AgenteDAO();
-    Agente objetoAgente =new Agente();    
+    Agente objetoAgente =new Agente();     
     FrmRegistraUsuarioAgente objetoVista= new FrmRegistraUsuarioAgente();
     
     
@@ -30,7 +31,7 @@ public class ControladorRegistroAgente implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==objetoVista.btnRegistrarA)
         {
-            agregarAgente();
+            agregarAgente();            
         }
     }
     
@@ -45,4 +46,6 @@ public class ControladorRegistroAgente implements ActionListener{
         objetoAgente.setApellido(objetoVista.txtregApellidoA.getText());        
         objetoDAO.insertarAgente(objetoAgente);
     }
+    
+    
 }

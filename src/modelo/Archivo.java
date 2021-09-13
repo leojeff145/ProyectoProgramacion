@@ -88,7 +88,7 @@ public class Archivo {
     
     public void guardarArchivoIncidente(Incidente inc){
         try{
-            FileWriter fw= new FileWriter("Ciudadano.txt",true);
+            FileWriter fw= new FileWriter("Incidentes.txt",true);
             BufferedWriter bw= new BufferedWriter(fw);
             PrintWriter pw= new PrintWriter(bw);
             pw.println(inc.incidente);
