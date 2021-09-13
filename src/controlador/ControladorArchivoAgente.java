@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import modelo.Agente;
 import modelo.Archivo;
+import vista.FrmPrincipal;
 import vista.FrmRegistraUsuarioAgente;
 
 /**
@@ -20,16 +21,23 @@ public class ControladorArchivoAgente implements ActionListener {
     Agente objetoAgente =new Agente();
     Archivo objArchivoAg = new Archivo();
     FrmRegistraUsuarioAgente objetoVista= new FrmRegistraUsuarioAgente();
+    FrmPrincipal objetoVistaPrin = new FrmPrincipal();
     
     public ControladorArchivoAgente(FrmRegistraUsuarioAgente v)
     {
         this.objetoVista=v;
         this.objetoVista.btnRegistrarA.addActionListener(this);
     }
+    
+//    public ControladorArchivoAgente(FrmPrincipal v)
+//    {
+//        this.objetoVistaPrin=v;        
+//    }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        agregarAgenteAr();
+//        recuperarAgenteAr();
+        agregarAgenteAr();        
     }
     
     public void agregarAgenteAr(){
@@ -39,8 +47,11 @@ public class ControladorArchivoAgente implements ActionListener {
         objetoAgente.setCorreoElectronico(objetoVista.txtRegCorreoA.getText());
         objetoAgente.setContraseña(objetoVista.txtRegContraA.getText());
         objArchivoAg.guardarArchivoAgente(objetoAgente);
+        objArchivoAg.getListAgente().add(objetoAgente);
     }
     
-    
+//    public void recuperarAgenteAr(){
+//        objArchivoAg.leerArchivoAgente();        
+//    }    
     
 }

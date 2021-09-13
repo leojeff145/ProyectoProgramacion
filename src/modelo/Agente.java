@@ -30,40 +30,8 @@ public class Agente extends Usuario{
     
     public void setId(long id) {
         this.id = id;
-    }
+    }    
     
-    
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public String getCorreoElectronico() {
-        return correoElectronico;
-    }
-
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
-    }
-
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
         
        
     
@@ -73,7 +41,9 @@ public class Agente extends Usuario{
     
     public void ordenarIncidente(){
         Collections.sort(HistorialDeIncidentes.getInsatance().getListIncidentes(),new CompararIncidentes());
-    }   
+    } 
+    
+    
     
     
 }

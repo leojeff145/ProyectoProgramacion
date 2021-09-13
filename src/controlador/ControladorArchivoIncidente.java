@@ -7,12 +7,8 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelo.Archivo;
+import modelo.HistorialDeIncidentes;
 import modelo.Incidente;
 import vista.FrmRegistraIncidenteC;
 
@@ -47,18 +43,13 @@ public class ControladorArchivoIncidente implements ActionListener {
         objetoIncidente.setBarrio(barrio);
         objetoIncidente.setCallePri(objetoVista.txtCalleP.getText());
         objetoIncidente.setCalleSec(objetoVista.txtCalleS.getText());
-        
-        try {
-            Date fecha = new Date();
-            SimpleDateFormat formato= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            fecha= formato.parse(objetoVista.txtFechaIncidente.getText()); 
-            objetoIncidente.setFechaIncidente(fecha);
-        } catch (ParseException ex) {
-            Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        objetoIncidente.setFechaIncidente(objetoVista.txtFechaIncidente.getText());         
         objetoIncidente.setDescripcionIncidente(objetoVista.txtDescripcion.getText());        
         objArchivoI.guardarArchivoIncidente(objetoIncidente);
-        System.out.println(objetoIncidente.toString());
+        HistorialDeIncidentes.getInsatance().adicionarIncidente(objetoIncidente);
+        //System.out.println(objetoIncidente.toString());
     }
+    
+    
     
 }

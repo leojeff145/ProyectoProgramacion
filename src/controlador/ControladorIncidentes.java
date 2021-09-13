@@ -52,15 +52,7 @@ public class ControladorIncidentes implements ActionListener {
         objetoIncidente.setBarrio(barrio);
         objetoIncidente.setCallePri(objetoVista.txtCalleP.getText());
         objetoIncidente.setCalleSec(objetoVista.txtCalleS.getText());
-        
-        try {
-            Date fecha = new Date();
-            SimpleDateFormat formato= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-            fecha= formato.parse(objetoVista.txtFechaIncidente.getText()); 
-            objetoIncidente.setFechaIncidente(fecha);
-        } catch (ParseException ex) {
-            Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        objetoIncidente.setFechaIncidente(objetoVista.txtFechaIncidente.getText());
         objetoIncidente.setDescripcionIncidente(objetoVista.txtDescripcion.getText());        
         objetoDAO.insertarIncidente(objetoIncidente);
     }

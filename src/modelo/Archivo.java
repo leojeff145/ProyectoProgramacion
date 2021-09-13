@@ -8,16 +8,34 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Locale;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-import vista.FrmRegistraUsuarioAgente;
 
 
 public class Archivo {
     
     ArrayList <Agente> listAgente= new ArrayList();
-    ArrayList <Ciudadano> listCiudadano= new ArrayList();  
+    ArrayList <Ciudadano> listCiudadano= new ArrayList();
+
+    //Getters-Setters
+    public ArrayList<Agente> getListAgente() {
+        return listAgente;
+    }
+
+    public void setListAgente(ArrayList<Agente> listAgente) {
+        this.listAgente = listAgente;
+    }
+
+    public ArrayList<Ciudadano> getListCiudadano() {
+        return listCiudadano;
+    }
+
+    public void setListCiudadano(ArrayList<Ciudadano> listCiudadano) {
+        this.listCiudadano = listCiudadano;
+    }
+    
     
     public void guardarArchivoAgente(Agente u){
         try{
@@ -52,15 +70,27 @@ public class Archivo {
         }
     }
     
+    public void mostrarAgente()
+    {
+        Agente aux = new Agente();
+        Iterator it= listAgente.iterator();
+        while(it.hasNext())
+        {
+            aux= (Agente) it.next();            
+            System.out.println(aux.getNombre());
+        }
+        
+    }
+    
     public void guardarArchivoCiudadano(Ciudadano c){
         try{
             FileWriter fw= new FileWriter("Ciudadano.txt",true);
             BufferedWriter bw= new BufferedWriter(fw);
             PrintWriter pw= new PrintWriter(bw);
             pw.println(c.getNumeroCedula());
-            pw.println(c.nombre);
-            pw.println(c.apellido);
             pw.println(c.getNumTelefono());
+            pw.println(c.nombre);
+            pw.println(c.apellido);            
             pw.println(c.correoElectronico);
             pw.println(c.contraseña);
             pw.println();
@@ -92,14 +122,31 @@ public class Archivo {
             BufferedWriter bw= new BufferedWriter(fw);
             PrintWriter pw= new PrintWriter(bw);
             pw.println(inc.incidente);
-            pw.println(inc.barrio);
             pw.println(inc.callePri);
             pw.println(inc.calleSec);
-            pw.println(inc.fechaIncidente.getYear()+"/"+inc.fechaIncidente.getMonth()+"/"+inc.fechaIncidente.getDay()+" "+inc.fechaIncidente.getHours()+":"+inc.fechaIncidente+":"+00);
+            pw.println(inc.barrio);
+            pw.println(inc.descripcionIncidente);
+            pw.println(inc.fechaIncidente);
             pw.println();
             pw.close();            
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
+        }       
+    }
+    
+    public void leerArchivoIncidentes(){
+        File archivo=new File("Incidentes.txt");
+        try
+        {
+            FileReader fr=new FileReader(archivo);
+            Scanner ingreso = new Scanner(fr);
+            ingreso.useLocale(Locale.ENGLISH);
+            while(ingreso.hasNext())
+            {
+                Incidente incidente= new Incidente(ingreso.next(),ingreso.next(),ingreso.next(),ingreso.next(),ingreso.next(),ingreso.next());
+                HistorialDeIncidentes.getInsatance().adicionarIncidente(incidente);
+            }
+        }catch(IOException o){            
         }       
     }
 }

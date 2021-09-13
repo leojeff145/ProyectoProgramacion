@@ -41,6 +41,9 @@ public class ControladorArchivoCiudadano implements ActionListener {
         objetoCiudadano.setContraseña(objetoVista.txtRegContraC.getText());
         objetoCiudadano.setNumTelefono(Long.parseLong(objetoVista.txtRegTelfC.getText()));
         objArchivoC.guardarArchivoCiudadano(objetoCiudadano);
+        objArchivoC.getListCiudadano().add(objetoCiudadano);
     }
+    
+    
     
 }

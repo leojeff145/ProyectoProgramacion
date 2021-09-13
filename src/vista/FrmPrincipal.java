@@ -10,6 +10,7 @@ import controlador.ControladorArchivoCiudadano;
 import controlador.ControladorRegistroAgente;
 import controlador.ControladorRegistroCiudadano;
 import javax.swing.JOptionPane;
+import modelo.Archivo;
 
 /**
  *
@@ -34,6 +35,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel Principal");
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
         jLabel1.setText("Zonas Inseguras del Centro Histórico de Quito");
@@ -153,6 +159,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -184,6 +194,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FrmPrincipal().setVisible(true);
+                Archivo archivo = new Archivo();
+                archivo.leerArchivoAgente();                
+                archivo.leerArchivoCiudadano();
+                archivo.leerArchivoIncidentes();
+               
             }
         });
     }

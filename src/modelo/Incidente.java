@@ -5,12 +5,6 @@
  */
 package modelo;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
  *
  * @author Leonardo Obando
@@ -21,23 +15,20 @@ public class Incidente {
     protected String calleSec;
     protected String barrio;
     protected String descripcionIncidente;
-    protected Date fechaIncidente;
+    protected String fechaIncidente;
     
     //Constructores
-    
-    public Incidente(String incidente, String callePri, String calleSec, String barrio, String descripcionIncidente) {
+
+    public Incidente(String incidente, String callePri, String calleSec, String barrio, String descripcionIncidente, String fechaIncidente) {
         this.incidente = incidente;
         this.callePri = callePri;
         this.calleSec = calleSec;
         this.barrio = barrio;
         this.descripcionIncidente = descripcionIncidente;
-//        try {
-//            SimpleDateFormat formato= new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-//            this.fechaIncidente = formato.parse("");            
-//        } catch (ParseException ex) {
-//            Logger.getLogger(Incidente.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        this.fechaIncidente = fechaIncidente;
     }
+    
+    
 
     public Incidente() {
     }
@@ -52,47 +43,48 @@ public class Incidente {
     public void setIncidente(String incidente) {
         this.incidente = incidente;
     }
-    
 
     public String getCallePri() {
         return callePri;
-    }
-
-    public String getCalleSec() {
-        return calleSec;
-    }
-
-    public String getBarrio() {
-        return barrio;
-    }
-
-    public String getDescripcionIncidente() {
-        return descripcionIncidente;
-    }
-
-    public Date getFechaIncidente() {
-        return fechaIncidente;
     }
 
     public void setCallePri(String callePri) {
         this.callePri = callePri;
     }
 
+    public String getCalleSec() {
+        return calleSec;
+    }
+
     public void setCalleSec(String calleSec) {
         this.calleSec = calleSec;
+    }
+
+    public String getBarrio() {
+        return barrio;
     }
 
     public void setBarrio(String barrio) {
         this.barrio = barrio;
     }
 
+    public String getDescripcionIncidente() {
+        return descripcionIncidente;
+    }
+
     public void setDescripcionIncidente(String descripcionIncidente) {
         this.descripcionIncidente = descripcionIncidente;
     }
 
-    public void setFechaIncidente(Date fechaIncidente) {
+    public String getFechaIncidente() {
+        return fechaIncidente;
+    }
+
+    public void setFechaIncidente(String fechaIncidente) {
         this.fechaIncidente = fechaIncidente;
-    }      
+    }
+
+         
     
     //funciones   
 

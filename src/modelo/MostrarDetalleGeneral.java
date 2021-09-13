@@ -25,7 +25,7 @@ public class MostrarDetalleGeneral implements MostrarIncidentes{
             System.out.println(aux.barrio);
             System.out.println(aux.callePri);
             System.out.println(aux.calleSec);
-            System.out.println(aux.fechaIncidente.toGMTString());
+            System.out.println(aux.fechaIncidente);
             System.out.println(aux.descripcionIncidente);
             
         }   
